@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom'
 import Loader from '../../components/UI/Loader/Loader'
 import axios from '../../axios/axios-quiz'
 import {connect} from 'react-redux'
+import {fetchQuizes} from '../../store/actions/quiz'
 
 class QuizList extends Component {
 
@@ -24,22 +25,7 @@ class QuizList extends Component {
   async componentDidMount() {
     this.props.fetchQuizes()
 
-    // try {
-    //   const response = await axios.get('/quizes.json')
-    //   const quizes = []
-
-    //   Object.keys(response.data).forEach((key, index) => {
-    //     quizes.push({
-    //       id: key,
-    //       name: `Тест №${index + 1}`
-    //     })
-    //   })
-
-    //   this.setState({
-    //     quizes,
-    //     loading: false
-    //   })
-    // } catch (e) {console.log(e)}
+    
   }
 
   render() {
